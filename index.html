@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dylan Brown | Portfolio</title>
+    <style>
+        :root {
+            --bg-color: #f5f7fa;
+            --text-color: #333;
+            --card-bg: #fff;
+            --accent: #4f46e5;
+        }
+
+        body.dark {
+            --bg-color: #121212;
+            --text-color: #f0f0f0;
+            --card-bg: #1e1e1e;
+            --accent: #818cf8;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--accent), #6366f1);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .toggle-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--card-bg);
+            color: var(--text-color);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        section {
+            max-width: 800px;
+            margin: auto;
+            padding: 2rem 1rem;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 0.5rem;
+        }
+
+        .skills-list, .projects-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills-list li, .projects-list li {
+            background: var(--card-bg);
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
+        }
+
+        .skills-list li:hover, .projects-list li:hover {
+            transform: translateY(-3px);
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.9rem;
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            transition: background-color 0.3s;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+    </style>
+</head>
+<body>
+
+    <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+
+    <header>
+        <h1>Dylan Brown</h1>
+        <p>Computer Science Graduate | Aspiring Software Developer</p>
+    </header>
+
+    <section>
+        <h2 class="section-title">About Me</h2>
+        <p>
+            I am a recent Computer Science graduate with a strong interest in web development, automation, and data analysis. 
+            Passionate about learning new technologies, building practical projects, and solving real-world problems through code.
+        </p>
+    </section>
+
+    <section>
+        <h2 class="section-title">Skills</h2>
+        <ul class="skills-list">
+            <li>HTML, CSS, JavaScript</li>
+            <li>Python (Flask, Pandas, NumPy)</li>
+            <li>Java (Object-Oriented Programming)</li>
+            <li>SQL & Database Management</li>
+            <li>Git & GitHub</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2 class="section-title">Projects</h2>
+        <ul class="projects-list">
+            <li>
+                <strong>Personal Portfolio Website</strong> — Built a responsive HTML/CSS site to showcase projects and skills.
+            </li>
+            <li>
+                <strong>Data Dashboard</strong> — Created an interactive Python dashboard for visualizing public API data.
+            </li>
+            <li>
+                <strong>Resume Keyword Scanner</strong> — Tool that compares job descriptions with resumes to find missing keywords.
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2 class="section-title">Contact</h2>
+        <p>Email: <a href="mailto:dylanb20122@gmail.com">dylanb20122@gmail.com</a></p>
+        <p>Phone: (904) 923-3264</p>
+        <p>GitHub: <a href="https://github.com/dylanb20122" target="_blank">github.com/dylanb20122</a></p>
+    </section>
+
+    <footer>
+        &copy; 2025 Dylan Brown — Built with HTML, CSS & JavaScript
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark'));
+        }
+
+        // Load saved preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark');
+        }
+    </script>
+
+</body>
+</html>
